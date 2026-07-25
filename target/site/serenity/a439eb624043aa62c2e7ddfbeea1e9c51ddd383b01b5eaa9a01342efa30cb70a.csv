@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login into SauceDemo","Successful login using different users","SUCCESS","2026-07-25T17:36:22.0768771-05:00[America/Bogota]","0.0","26.99"
+"Login into SauceDemo","Locked user cannot log in","SUCCESS","2026-07-25T17:36:49.0849914-05:00[America/Bogota]","0.0","3.45"
+"Login into SauceDemo","Invalid credentials","SUCCESS","2026-07-25T17:36:52.5720005-05:00[America/Bogota]","0.0","3.52"

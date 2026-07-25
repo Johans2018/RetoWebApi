@@ -1,0 +1,67 @@
+defaultTasks 'clean', 'test', 'aggregate'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:3.9.8"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+ext {
+    serenityCoreVersion = '3.9.8'
+    junitVersion = '4.13.2'
+    assertJVersion = '3.24.2'
+    logbackVersion = '1.2.12'
+}
+
+dependencies {
+    // WebDriverManager actualizado
+    implementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
+
+    // Core Serenity
+    implementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}"
+
+    // Logging (Solo logback, quitamos slf4j-simple para evitar conflictos)
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+
+    // Testing
+    testImplementation "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
+    testImplementation "junit:junit:${junitVersion}"
+    testImplementation "org.assertj:assertj-core:${assertJVersion}"
+}
+
+test {
+    systemProperties System.getProperties()
+    maxParallelForks = 8
+}
+
+serenity {
+    testRoot = "net.serenitybdd.demos.todos"
+    requirementsDir = "src/test/resources/features"
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
