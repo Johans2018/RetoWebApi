@@ -40,3 +40,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Serenity / Maven Target ###
+target/
+**/target/
