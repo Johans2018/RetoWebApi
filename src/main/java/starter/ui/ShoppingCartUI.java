@@ -14,4 +14,8 @@ public class ShoppingCartUI {
 
     public static final Target CART = Target.the("Carrito de compras")
             .located(By.xpath("//span[@data-test='shopping-cart-badge']"));
+
+    public static final Target CART_LINK = Target
+            .the("Link carrito de compras")
+            .located(By.xpath("//a[@data-test='shopping-cart-link']"));
 }
