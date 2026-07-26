@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class CreateBookingStep {
 
-    private Actor jonathan = Actor.named("Jonathan");
+    private final Actor jonathan = Actor.named("Jonathan");
     private Booking bookingInfo;
 
     @Before

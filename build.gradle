@@ -59,7 +59,7 @@ test {
 }
 
 serenity {
-    testRoot = "net.serenitybdd.demos.todos"
+    testRoot = "cucumber"
     requirementsDir = "src/test/resources/features"
 }
 

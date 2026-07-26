@@ -1,5 +1,5 @@
 @API
-@SmokeApi
+@SmokeCreate
 Feature: Create Booking
 
   Scenario: Create a new booking
