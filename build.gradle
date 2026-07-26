@@ -42,6 +42,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
 
     // Logging (Solo logback, quitamos slf4j-simple para evitar conflictos)
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
