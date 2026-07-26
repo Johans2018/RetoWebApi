@@ -1,8 +1,5 @@
 package starter.models;
 
-import lombok.Getter;
-
-@Getter
 public class Booking {
     // Getters y Setters
     private String firstname;
@@ -22,6 +19,30 @@ public class Booking {
         this.depositpaid = depositpaid;
         this.bookingdates = bookingdates;
         this.additionalneeds = additionalneeds;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public int getTotalprice() {
+        return totalprice;
+    }
+
+    public boolean isDepositpaid() {
+        return depositpaid;
+    }
+
+    public BookingDates getBookingdates() {
+        return bookingdates;
+    }
+
+    public String getAdditionalneeds() {
+        return additionalneeds;
     }
 
     public void setFirstname(String firstname) { this.firstname = firstname; }
